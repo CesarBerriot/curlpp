@@ -9,6 +9,10 @@ elseif(CMAKE_CXX_STANDARD LESS ${required_cxx_version})
   message(FATAL_ERROR "cURLpp requires C++ ${required_cxx_version} or higher.")
 endif()
 
+if(BUILD_SHARED_LIBS)
+  message(FATAL_ERROR "cURLpp requires BUILD_SHARED_LIBS to be off.")
+endif()
+
 if(NOT TARGET libcurl_static)
   message(FATAL_ERROR "cURLpp requires libcURL to be available before being integrated.")
 endif()

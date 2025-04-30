@@ -25,7 +25,7 @@ discover_sources(curlpp)
 target_include_directories(curlpp PUBLIC include)
 target_link_libraries(curlpp PUBLIC libcurl_static)
 if(MINGW)
-  target_compile_options(curlpp PRIVATE -Wno-deprecated-declarations)
+  target_compile_options(curlpp PUBLIC -Wno-deprecated-declarations)
 endif()
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
